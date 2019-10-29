@@ -15,7 +15,7 @@ function Content(props) {
             break
         case 'markdown':
             state = {
-                style: { whiteSpace: 'pre-line' },
+                style: { whiteSpace: 'pre' },
                 children: props.content
             }
             break
@@ -41,6 +41,7 @@ export default function App(props) {
     return (
         <div>
             <button onClick={switchMode}>switch</button>
+            <hr />
             <Content mode={mode} content={props.content} />
         </div >
     )

@@ -27,13 +27,13 @@ app.get('/', async (req, res) => {
     <script>window['RSSR.App']={initialProps:${JSON.stringify(initialProps)}}</script>
     <script src="/bundle.js"></script>`
     const result = indexTemplate.replace('<!-- html -->', html).replace('<!-- script -->', script)
+    res.setHeader('Content-Type', 'text/html');
     res.end(result)
 })
 
 app.get('/bundle.js', (req, res) => {
     res.setHeader('Content-Type', 'application/javascript');
-    fs.createReadStream(path.join(__dirname, 'bundle.js'))
-        .pipe(res)
+    fs.createReadStream(path.join(__dirname, 'bundle.js')).pipe(res)
 })
 
 app.listen(3000, () => console.log('> Serving on http://localhost:3000'))

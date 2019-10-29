@@ -5,7 +5,6 @@
   "repository": "https://github.com/cbdyzj/rssr.git",
   "author": "cbdyzj <cbdyzj@jianzhao.org>",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "start": "yarn build && node dist/server.js",
     "build": "tsc && webpack --mode production",
