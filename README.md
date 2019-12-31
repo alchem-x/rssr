@@ -5,7 +5,6 @@ React server side render
 ## Start
 
 ```sh
-yarn
-yarn build
+yarn install --ignore-optional
 yarn start
 ```
